@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #000000}
+    span.s1 {text-decoration: underline}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">  &lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1">  &lt;title&gt;Invitación de boda&lt;/title&gt;</p>
+<p class="p1">  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1">  &lt;style&gt;</p>
+<p class="p1">    * {</p>
+<p class="p1">      box-sizing: border-box;</p>
+<p class="p1">      margin: 0;</p>
+<p class="p1">      padding: 0;</p>
+<p class="p1">      font-family: "Georgia", "Times New Roman", serif;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    body {</p>
+<p class="p1">      background: #f6f3ee;</p>
+<p class="p1">      color: #333;</p>
+<p class="p1">      line-height: 1.6;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    a {</p>
+<p class="p1">      text-decoration: none;</p>
+<p class="p1">      color: inherit;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Barra de navegación fija arriba */</p>
+<p class="p1">    header {</p>
+<p class="p1">      position: sticky;</p>
+<p class="p1">      top: 0;</p>
+<p class="p1">      z-index: 100;</p>
+<p class="p1">      background: rgba(246, 243, 238, 0.95);</p>
+<p class="p1">      backdrop-filter: blur(6px);</p>
+<p class="p1">      border-bottom: 1px solid #ddd;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .nav-container {</p>
+<p class="p1">      max-width: 900px;</p>
+<p class="p1">      margin: 0 auto;</p>
+<p class="p1">      padding: 10px 16px;</p>
+<p class="p1">      display: flex;</p>
+<p class="p1">      justify-content: space-between;</p>
+<p class="p1">      align-items: center;</p>
+<p class="p1">      font-size: 14px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .nav-links a {</p>
+<p class="p1">      margin-left: 12px;</p>
+<p class="p1">      font-size: 13px;</p>
+<p class="p1">      text-transform: uppercase;</p>
+<p class="p1">      letter-spacing: 1px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .nav-links a:hover {</p>
+<p class="p1">      text-decoration: underline;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Secciones generales */</p>
+<p class="p1">    section {</p>
+<p class="p1">      max-width: 900px;</p>
+<p class="p1">      margin: 0 auto;</p>
+<p class="p1">      padding: 40px 16px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .center {</p>
+<p class="p1">      text-align: center;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Hero / portada */</p>
+<p class="p1">    .hero {</p>
+<p class="p1">      min-height: 90vh;</p>
+<p class="p1">      display: flex;</p>
+<p class="p1">      flex-direction: column;</p>
+<p class="p1">      justify-content: center;</p>
+<p class="p1">      align-items: center;</p>
+<p class="p1">      text-align: center;</p>
+<p class="p1">      background-image: linear-gradient(</p>
+<p class="p1">          rgba(0, 0, 0, 0.35),</p>
+<p class="p1">          rgba(0, 0, 0, 0.35)</p>
+<p class="p1">        ),</p>
+<p class="p1">        url("<span class="s1">https://imgur.com/a/QHundbM</span>"); /* Podés cambiar esta foto */</p>
+<p class="p1">      background-size: cover;</p>
+<p class="p1">      background-position: center;</p>
+<p class="p1">      color: #fff;</p>
+<p class="p1">      padding: 0 16px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .hero-subtitle {</p>
+<p class="p1">      font-size: 16px;</p>
+<p class="p1">      letter-spacing: 3px;</p>
+<p class="p1">      text-transform: uppercase;</p>
+<p class="p1">      margin-bottom: 12px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .hero-names {</p>
+<p class="p1">      font-size: 42px;</p>
+<p class="p1">      letter-spacing: 3px;</p>
+<p class="p1">      text-transform: uppercase;</p>
+<p class="p1">      margin-bottom: 8px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .hero-and {</p>
+<p class="p1">      font-size: 20px;</p>
+<p class="p1">      margin: 4px 0 8px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .hero-date {</p>
+<p class="p1">      font-size: 18px;</p>
+<p class="p1">      margin-bottom: 4px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .hero-place {</p>
+<p class="p1">      font-size: 15px;</p>
+<p class="p1">      opacity: 0.9;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .hero-button {</p>
+<p class="p1">      margin-top: 28px;</p>
+<p class="p1">      padding: 10px 26px;</p>
+<p class="p1">      border-radius: 50px;</p>
+<p class="p1">      border: 1px solid #fff;</p>
+<p class="p1">      background: transparent;</p>
+<p class="p1">      color: #fff;</p>
+<p class="p1">      font-size: 13px;</p>
+<p class="p1">      letter-spacing: 1px;</p>
+<p class="p1">      text-transform: uppercase;</p>
+<p class="p1">      cursor: pointer;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .hero-button:hover {</p>
+<p class="p1">      background: rgba(255, 255, 255, 0.15);</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Títulos de sección */</p>
+<p class="p1">    .section-title {</p>
+<p class="p1">      text-transform: uppercase;</p>
+<p class="p1">      letter-spacing: 3px;</p>
+<p class="p1">      font-size: 14px;</p>
+<p class="p1">      margin-bottom: 8px;</p>
+<p class="p1">      text-align: center;</p>
+<p class="p1">      color: #777;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .section-main-title {</p>
+<p class="p1">      font-size: 26px;</p>
+<p class="p1">      text-align: center;</p>
+<p class="p1">      margin-bottom: 20px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .section-text {</p>
+<p class="p1">      font-size: 15px;</p>
+<p class="p1">      text-align: center;</p>
+<p class="p1">      max-width: 600px;</p>
+<p class="p1">      margin: 0 auto;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Detalles del evento */</p>
+<p class="p1">    .cards {</p>
+<p class="p1">      display: grid;</p>
+<p class="p1">      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</p>
+<p class="p1">      gap: 20px;</p>
+<p class="p1">      margin-top: 24px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .card {</p>
+<p class="p1">      background: #fff;</p>
+<p class="p1">      border-radius: 12px;</p>
+<p class="p1">      padding: 20px;</p>
+<p class="p1">      border: 1px solid #e0d9ce;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .card-title {</p>
+<p class="p1">      font-size: 16px;</p>
+<p class="p1">      letter-spacing: 2px;</p>
+<p class="p1">      text-transform: uppercase;</p>
+<p class="p1">      margin-bottom: 10px;</p>
+<p class="p1">      color: #555;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .card-text {</p>
+<p class="p1">      font-size: 14px;</p>
+<p class="p1">      margin-bottom: 4px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Mapa */</p>
+<p class="p1">    .map-container {</p>
+<p class="p1">      margin-top: 24px;</p>
+<p class="p1">      border-radius: 12px;</p>
+<p class="p1">      overflow: hidden;</p>
+<p class="p1">      border: 1px solid #ddd;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .map-iframe {</p>
+<p class="p1">      width: 100%;</p>
+<p class="p1">      height: 280px;</p>
+<p class="p1">      border: 0;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* RSVP */</p>
+<p class="p1">    .rsvp-box {</p>
+<p class="p1">      margin-top: 24px;</p>
+<p class="p1">      background: #fff;</p>
+<p class="p1">      border-radius: 12px;</p>
+<p class="p1">      padding: 24px;</p>
+<p class="p1">      border: 1px solid #e0d9ce;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .rsvp-box p {</p>
+<p class="p1">      font-size: 14px;</p>
+<p class="p1">      margin-bottom: 12px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .rsvp-button {</p>
+<p class="p1">      display: inline-block;</p>
+<p class="p1">      margin-top: 10px;</p>
+<p class="p1">      padding: 10px 26px;</p>
+<p class="p1">      border-radius: 50px;</p>
+<p class="p1">      border: none;</p>
+<p class="p1">      background: #c9a27f;</p>
+<p class="p1">      color: #fff;</p>
+<p class="p1">      font-size: 13px;</p>
+<p class="p1">      letter-spacing: 1px;</p>
+<p class="p1">      text-transform: uppercase;</p>
+<p class="p1">     cursor: pointer;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    .rsvp-button:hover {</p>
+<p class="p1">      opacity: 0.9;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Footer */</p>
+<p class="p1">    footer {</p>
+<p class="p1">      text-align: center;</p>
+<p class="p1">      font-size: 12px;</p>
+<p class="p1">      color: #777;</p>
+<p class="p1">      padding: 20px 8px 30px;</p>
+<p class="p1">    }</p>
+<p class="p1"> </p>
+<p class="p1">    /* Responsivo */</p>
+<p class="p1">    @media (max-width: 600px) {</p>
+<p class="p1">      .hero-names {</p>
+<p class="p1">        font-size: 32px;</p>
+<p class="p1">      }</p>
+<p class="p1">      .hero-date {</p>
+<p class="p1">        font-size: 16px;</p>
+<p class="p1">      }</p>
+<p class="p1">    }</p>
+<p class="p1">  &lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"> </p>
+<p class="p1">  &lt;!-- Barra de navegación --&gt;</p>
+<p class="p1">  &lt;header&gt;</p>
+<p class="p1">    &lt;div class="nav-container"&gt;</p>
+<p class="p1">      &lt;div class="nav-logo"&gt;Nuestra boda&lt;/div&gt;</p>
+<p class="p1">      &lt;nav class="nav-links"&gt;</p>
+<p class="p1">        &lt;a href="#historia"&gt;Nosotros&lt;/a&gt;</p>
+<p class="p1">        &lt;a href="#detalles"&gt;Detalles&lt;/a&gt;</p>
+<p class="p1">        &lt;a href="#ubicacion"&gt;Cómo llegar&lt;/a&gt;</p>
+<p class="p1">        &lt;a href="#rsvp"&gt;Confirmar asistencia&lt;/a&gt;</p>
+<p class="p1">      &lt;/nav&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/header&gt;</p>
+<p class="p1"> </p>
+<p class="p1">  &lt;!-- Portada principal --&gt;</p>
+<p class="p1">  &lt;section class="hero" id="inicio"&gt;</p>
+<p class="p1">    &lt;!-- EDITAR: Nombres, fecha y lugar --&gt;</p>
+<p class="p1">    &lt;div class="hero-subtitle"&gt;Celebramos el amor&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="hero-names"&gt;Mariela&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="hero-and"&gt;&amp;amp;&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="hero-names"&gt;Fabio&lt;/div&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    &lt;p class="hero-date"&gt;Sábado 17 de enero de 2025&lt;/p&gt;</p>
+<p class="p1">    &lt;p class="hero-place"&gt;Salón - Resistencia, Chaco&lt;/p&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    &lt;button class="hero-button" onclick="document.getElementById('detalles').scrollIntoView({behavior: 'smooth'})"&gt;</p>
+<p class="p1">      Ver invitación</p>
+<p class="p1">    &lt;/button&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p1"> </p>
+<p class="p1">  &lt;!-- Nuestra historia / mensaje --&gt;</p>
+<p class="p1">  &lt;section id="historia"&gt;</p>
+<p class="p1">    &lt;p class="section-title"&gt;Nuestra historia&lt;/p&gt;</p>
+<p class="p1">    &lt;h2 class="section-main-title"&gt;Un día especial&lt;/h2&gt;</p>
+<p class="p1">    &lt;!-- EDITAR: Texto personalizado --&gt;</p>
+<p class="p1">    &lt;p class="section-text"&gt;</p>
+<p class="p1">      Con mucha alegría queremos compartir con ustedes un momento muy importante de nuestras vidas:</p>
+<p class="p1">      ¡nos casamos! Nos encantaría que nos acompañen en este día tan especial que sera un ASADO FAMILIAR para celebrar juntos</p>
+<p class="p1">      el amor, la familia y la amistad.</p>
+<p class="p1">    &lt;/p&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p1"> </p>
+<p class="p1">  &lt;!-- Detalles del evento --&gt;</p>
+<p class="p1">  &lt;section id="detalles"&gt;</p>
+<p class="p1">    &lt;p class="section-title"&gt;El gran día&lt;/p&gt;</p>
+<p class="p1">    &lt;h2 class="section-main-title"&gt;Detalles de la celebración&lt;/h2&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    &lt;div class="cards"&gt;</p>
+<p class="p1"> </p>
+<p class="p1">      &lt;!-- EDITAR: Detalles de la fiesta --&gt;</p>
+<p class="p1">      &lt;div class="card"&gt;</p>
+<p class="p1">        &lt;p class="card-title"&gt;Ceremonia&lt;/p&gt;</p>
+<p class="p1">        &lt;p class="card-text"&gt;&lt;strong&gt;Hora:&lt;/strong&gt; 20:45 hs&lt;/p&gt;</p>
+<p class="p1">        &lt;p class="card-text"&gt;&lt;strong&gt;Lugar:&lt;/strong&gt; El castillito - Mutual del Banco del Chaco&lt;/p&gt;</p>
+<p class="p1">        &lt;p class="card-text"&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; RN16. KM 11.5. Colectora Norte, Resistencia&lt;/p&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    </p>
+<p class="p1">      &lt;!-- EDITAR: Dress code / regalos / info extra --&gt;</p>
+<p class="p1">      &lt;div class="card"&gt;</p>
+<p class="p1">        &lt;p class="card-title"&gt;Información&lt;/p&gt;</p>
+<p class="p1">        &lt;p class="card-text"&gt;&lt;strong&gt;Código de vestimenta:&lt;/strong&gt; Elegante sport&lt;/p&gt;</p>
+<p class="p1">        &lt;p class="card-text"&gt;&lt;strong&gt;Niños:&lt;/strong&gt; Solo adultos&lt;/p&gt;</p>
+<p class="p1">       &lt;p class="card-text"&gt;&lt;strong&gt;Regalos:&lt;/strong&gt; Si desean hacernos un regalo, pueden hacerlo a: &lt;br&gt;</p>
+<p class="p1">Alias: BodaMarieyFabio &lt;br&gt;</p>
+<p class="p1">CBU: 3110017311000002663089&lt;/p&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p1"> </p>
+<p class="p1">  &lt;!-- Mapa / ubicación --&gt;</p>
+<p class="p1">  &lt;section id="ubicacion"&gt;</p>
+<p class="p1">    &lt;p class="section-title"&gt;Cómo llegar&lt;/p&gt;</p>
+<p class="p1">    &lt;h2 class="section-main-title"&gt;Ubicación de la fiesta&lt;/h2&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    &lt;p class="section-text"&gt;</p>
+<p class="p1">      Te dejamos la ubicación para que puedas llegar fácilmente al salón. Podés abrir el mapa en tu</p>
+<p class="p1">      celular y usar tu app de GPS favorita.</p>
+<p class="p1">    &lt;/p&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    &lt;div class="map-container"&gt;</p>
+<p class="p1">      &lt;!-- EDITAR: Link del mapa. Podés reemplazar el src por el embed de Google Maps del salón --&gt;</p>
+<p class="p1">      &lt;iframe</p>
+<p class="p1">        class="map-iframe"</p>
+<p class="p1">        src="<a href="https://maps.app.goo.gl/WSqwAyXDE3AwuATK7"><span class="s1">https://maps.app.goo.gl/WSqwAyXDE3AwuATK7</span></a>"</p>
+<p class="p1">        loading="lazy"</p>
+<p class="p1">        referrerpolicy="no-referrer-when-downgrade"&gt;</p>
+<p class="p1">      &lt;/iframe&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p1"> </p>
+<p class="p1">  &lt;!-- Confirmación de asistencia --&gt;</p>
+<p class="p1">  &lt;section id="rsvp"&gt;</p>
+<p class="p1">    &lt;p class="section-title"&gt;Confirmar asistencia&lt;/p&gt;</p>
+<p class="p1">    &lt;h2 class="section-main-title"&gt;¿Nos acompañás?&lt;/h2&gt;</p>
+<p class="p1"> </p>
+<p class="p1">    &lt;div class="rsvp-box"&gt;</p>
+<p class="p1">      &lt;!-- EDITAR: Fecha límite e indicaciones --&gt;</p>
+<p class="p1">      &lt;p&gt;</p>
+<p class="p1">        Te pedimos que por favor confirmes tu asistencia antes del</p>
+<p class="p1">        &lt;strong&gt;25 de diciembre de 2025&lt;/strong&gt; para poder organizar todo de la mejor manera.</p>
+<p class="p1">      &lt;/p&gt;</p>
+<p class="p1">      &lt;p&gt;</p>
+<p class="p1">        Podés confirmar haciendo clic en el siguiente botón y completando tus datos (nombre, cantidad</p>
+<p class="p1">        de acompañantes, etc.).</p>
+<p class="p1">      &lt;/p&gt;</p>
+<p class="p1"> </p>
+<p class="p1">      &lt;!-- EDITAR: Poné acá el link a un formulario de Google Forms o similar --&gt;</p>
+<p class="p1">      &lt;a href="<a href="https://docs.google.com/forms/d/e/1FAIpQLSf7mXeLdVMc8vj0en2xPkDJ8bBrVHQ72yrAuFKmC1_cbLnpvQ/viewform?usp=publish-editor"><span class="s1">https://docs.google.com/forms/d/e/1FAIpQLSf7mXeLdVMc8vj0en2xPkDJ8bBrVHQ72yrAuFKmC1_cbLnpvQ/viewform?usp=publish-editor</span></a>"&gt;</p>
+<p class="p1">        &lt;button class="rsvp-button"&gt;Confirmar asistencia&lt;/button&gt;</p>
+<p class="p1">      &lt;/a&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p1"> </p>
+<p class="p1">  &lt;!-- Footer --&gt;</p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    Con cariño, &lt;strong&gt;MARIELA &amp;amp; FABIO&lt;/strong&gt; · ¡Te esperamos!</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1"> </p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
