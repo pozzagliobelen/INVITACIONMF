@@ -1,517 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Invitación de boda</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- TIPOGRAFÍAS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: #f6f3ee;
-      color: #333;
-      line-height: 1.6;
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    h1, h2, h3 {
-      font-family: "Playfair Display", "Times New Roman", serif;
-      font-weight: 600;
-    }
-
-    /* NAV */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(246, 243, 238, 0.95);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #ddd;
-    }
-
-    .nav-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-    }
-
-    .nav-logo {
-      font-family: "Dancing Script", cursive;
-      font-size: 22px;
-    }
-
-    .nav-links a {
-      margin-left: 12px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 16px;
-    }
-
-    /* HERO / PORTADA */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      background-image:
-        linear-gradient(
-          rgba(0, 0, 0, 0.35),
-          rgba(0, 0, 0, 0.35)
-        ),
-        url("https://i.imgur.com/reQzolk.png"); /* FOTO PORTADA */
-
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      color: #fff;
-      padding: 0 16px;
-      position: relative;
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .hero-names {
-      font-size: 42px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .hero-and {
-      font-size: 22px;
-      margin: 4px 0 8px;
-    }
-
-    .hero-date {
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .hero-place {
-      font-size: 15px;
-      opacity: 0.9;
-    }
-
-    .hero-buttons {
-      margin-top: 28px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      padding: 11px 26px;
-      border-radius: 999px;
-      border: none;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-primary {
-      background: #c9a27f;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #fff;
-      border: 1px solid #fff;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.95;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-    }
-
-    /* TÍTULOS DE SECCIÓN */
-    .section-title {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 14px;
-      margin-bottom: 8px;
-      text-align: center;
-      color: #777;
-    }
-
-    .section-main-title {
-      font-size: 26px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .section-text {
-      font-size: 15px;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* CUENTA REGRESIVA */
-    .countdown-wrapper {
-      margin-top: 28px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .countdown {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .count-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 12px 16px;
-      min-width: 70px;
-      text-align: center;
-      border: 1px solid #e0d9ce;
-    }
-
-    .count-number {
-      font-size: 20px;
-      font-weight: 600;
-      display: block;
-    }
-
-    .count-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #777;
-    }
-
-    /* CORAZONES */
-    #hearts-container {
-      position: fixed;
-      pointer-events: none;
-      inset: 0;
-      overflow: hidden;
-      z-index: 5;
-    }
-
-    .heart {
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      background: transparent;
-      animation: heartFall linear infinite;
-    }
-
-    .heart svg {
-      fill: white;
-      stroke: #d62828;
-      stroke-width: 2;
-      width: 100%;
-      height: 100%;
-    }
-
-    @keyframes heartFall {
-      0% {
-        transform: translateY(-20px) scale(1);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) scale(0.9);
-        opacity: 0;
-      }
-    }
-
-    /* GALERÍA */
-    .gallery-section {
-      padding-top: 10px;
-    }
-
-    .gallery-grid {
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid #e0d9ce;
-    }
-
-    /* CARDS DETALLES */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 24px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 22px 20px;
-      border: 1px solid #e0d9ce;
-      text-align: center;
-    }
-
-    .card-icon {
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .icon-circle {
-      width: 66px;
-      height: 66px;
-      border-radius: 50%;
-      background: #fdf5f1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: floatIcon 3s ease-in-out infinite;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    }
-
-    .icon-circle svg {
-      width: 38px;
-      height: 38px;
-      stroke: #c9a27f;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-    }
-
-    .card:nth-child(2) .icon-circle { animation-delay: 0.4s; }
-    .card:nth-child(3) .icon-circle { animation-delay: 0.8s; }
-
-    @keyframes floatIcon {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-      100% { transform: translateY(0); }
-    }
-
-    .card-title {
-      font-size: 15px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: #555;
-    }
-
-    .card-text {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .card-text-italic {
-      font-size: 13px;
-      margin-top: 8px;
-      font-style: italic;
-      color: #555;
-    }
-
-    /* MAPA, RSVP, FOOTER */
-    .map-container {
-      margin-top: 24px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #ddd;
-    }
-
-    .map-iframe {
-      width: 100%;
-      height: 320px;
-      border: 0;
-    }
-
-    .rsvp-box {
-      margin-top: 20px;
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px 18px 26px;
-      border: 1px solid #e0d9ce;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px 16px 40px;
-      font-size: 13px;
-      color: #777;
-    }
-
-    /* BOTÓN MÚSICA + TEXTO */
-    .music-hint {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 12px;
-      color: #555;
-    }
-
-    .music-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #c9a27f;
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      z-index: 9999;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .music-button:hover {
-      transform: scale(1.05);
-      opacity: 0.95;
-    }
-
-    /* REGALOS ABAJO */
-    .regalos-card {
-      grid-column: 1 / -1;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .hero-names {
-        font-size: 32px;
-      }
-
-      .hero-date {
-        font-size: 16px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      section {
-        padding: 32px 16px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- CORAZONES -->
-<div id="hearts-container"></div>
-
-<!-- NAV -->
-<header>
-  <div class="nav-container">
-    <div class="nav-logo">Mariela &amp; Fabio</div>
-    <nav class="nav-links">
-      <a href="#historia">Nosotros</a>
-      <a href="#countdown">Cuenta regresiva</a>
-      <a href="#galeria">Galería</a>
-      <a href="#detalles">Detalles</a>
-      <a href="#ubicacion">Cómo llegar</a>
-      <a href="#rsvp">Asistencia</a>
-      <a href="#musica">Música</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-subtitle">Celebramos el amor</div>
-  <div class="hero-names">Mariela</div>
-  <div class="hero-and">&amp;</div>
-  <div class="hero-names">Fabio</div>
+A</div>
+  <div class="hero-heart">❤️</div>
+  <div class="hero-names">FABIO</div>
 
   <p class="hero-date">Sábado 17 de enero de 2026</p>
   <p class="hero-place">Predio “El Castillito” · Resistencia, Chaco</p>
 
   <div class="hero-buttons">
-    <button class="btn btn-primary" onclick="document.getElementById('countdown').scrollIntoView({behavior: 'smooth'})">
+    <button class="btn btn-primary" onclick="document.getElementById('detalles').scrollIntoView({behavior:'smooth'})">
       Ver detalles
     </button>
-    <button class="btn btn-outline" onclick="document.getElementById('rsvp').scrollIntoView({behavior: 'smooth'})">
+    <button class="btn btn-outline" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">
       Confirmar asistencia
     </button>
   </div>
 </section>
 
 <!-- PASE PARA DOS PERSONAS -->
-<section style="text-align:center; padding:45px 0 25px; width:100%; display:flex; flex-direction:column; align-items:center;">
-
-  <!-- Ícono dos personas -->
-  <div style="margin-bottom:14px;">
-    <svg width="64" height="64" viewBox="0 0 40 40"
-         style="stroke:#c9a27f; stroke-width:1.8; fill:none;">
+<section class="pase">
+  <div class="pase-icon">
+    <svg width="52" height="52" viewBox="0 0 40 40" style="stroke:#c9a27f; stroke-width:1.6; fill:none;">
       <circle cx="13" cy="14" r="6"></circle>
       <circle cx="27" cy="14" r="6"></circle>
       <path d="M5 32c0-6 5-11 11-11"></path>
       <path d="M23 21c6 0 11 5 11 11"></path>
     </svg>
   </div>
-
-  <p style="
-    font-size:28px;
-    font-weight:600;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:#444;
-    font-family:'Playfair Display', serif;
-    text-align:center;
-    margin-top:5px;">
-    Pase para dos personas
-  </p>
+  <div class="pase-title">Pase para dos personas</div>
 </section>
 
 <!-- HISTORIA -->
@@ -519,9 +33,8 @@
   <p class="section-title">Nuestra historia</p>
   <h2 class="section-main-title">Un día especial</h2>
   <p class="section-text">
-    Con mucha alegría queremos compartir con ustedes un momento muy importante de nuestras vidas:
-    ¡nos casamos! Nos encantaría que nos acompañen en este día tan especial que será un asado
-    familiar para celebrar juntos el amor, la familia y la amistad.
+    Con mucha alegría queremos compartir con ustedes un momento muy importante de nuestras vidas: ¡nos casamos!  
+    Nos encantaría que nos acompañen en este día tan especial que será un asado familiar para celebrar juntos el amor, la familia y la amistad.
   </p>
 </section>
 
@@ -542,24 +55,20 @@
       </div>
       <div class="count-box">
         <span class="count-number" id="minutes">--</span>
-        <span class="count-label">Minutos</span>
+        <span class="count-label">Min</span>
       </div>
       <div class="count-box">
         <span class="count-number" id="seconds">--</span>
-        <span class="count-label">Segundos</span>
+        <span class="count-label">Seg</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GALERÍA -->
-<section id="galeria" class="gallery-section">
-  <p class="section-title">Momentos</p>
-  <h2 class="section-main-title">Algunas fotos nuestras</h2>
-  <p class="section-text">
-    Un pequeño adelanto de todo lo que queremos seguir construyendo juntos.
-  </p>
-
+<section id="galeria">
+  <p class="section-title">Galería</p>
+  <h2 class="section-main-title">Momentos juntos</h2>
   <div class="gallery-grid">
     <img src="https://i.imgur.com/vWerE6N.jpeg" alt="Foto 1">
     <img src="https://i.imgur.com/4AHnxv4.jpeg" alt="Foto 2">
@@ -567,141 +76,112 @@
     <img src="https://i.imgur.com/rHdy0rn.jpeg" alt="Foto 4">
   </div>
 </section>
-<!-- DETALLES -->
+
+<!-- DETALLES DEL EVENTO -->
 <section id="detalles">
   <p class="section-title">Información útil</p>
   <h2 class="section-main-title">Detalles del evento</h2>
 
   <div class="cards">
-
-    <!-- LUGAR & HORARIO -->
+    <!-- Lugar -->
     <div class="card">
       <div class="card-icon">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="7" r="4"/>
-            <path d="M4 22c0-4 4-7 8-7s8 3 8 7"/>
-          </svg>
-        </div>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L3 9h3v11h6v-6h0v6h6V9h3z"/>
+        </svg>
       </div>
-
-      <p class="card-title">Lugar & Horario</p>
+      <h3 class="card-title">Lugar &amp; horario</h3>
       <p class="card-text"><strong>Fecha:</strong> 17 de enero de 2026</p>
       <p class="card-text"><strong>Hora:</strong> 20:45 hs</p>
       <p class="card-text"><strong>Predio:</strong> “El Castillito” – Mutual del Banco del Chaco</p>
       <p class="card-text"><strong>Dirección:</strong> RN16, KM 11.5 · Colectora Norte · Resistencia</p>
     </div>
 
-    <!-- ASISTENCIA -->
+    <!-- Asistencia -->
     <div class="card">
       <div class="card-icon">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24">
-            <rect x="4" y="4" width="16" height="16" rx="2"/>
-            <path d="M8 12h8M12 8v8"/>
-          </svg>
-        </div>
+        <svg viewBox="0 0 24 24">
+          <path d="M9 6h13M9 12h13M9 18h13"/>
+          <circle cx="4" cy="6" r="1.5"/>
+          <circle cx="4" cy="12" r="1.5"/>
+          <circle cx="4" cy="18" r="1.5"/>
+        </svg>
       </div>
-
-      <p class="card-title">Asistencia</p>
-
+      <h3 class="card-title">Asistencia</h3>
       <p class="card-text">
         Te pedimos que por favor confirmes tu asistencia antes del
-        <strong>25 de diciembre de 2025</strong> para poder organizar todo de la mejor manera.
+        <strong>25 de diciembre de 2025</strong>.
       </p>
-      <p class="card-text">Podés confirmar enviando un mensaje de WhatsApp. ♥️</p>
-
-      <br>
-
-      <!-- BOTONES WHATSAPP -->
-      <a href="https://wa.me/543624890118?text=Hola%20Mariela!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20💗"
-         class="btn btn-primary" style="width:100%; margin-bottom:8px;">
-         Confirmar con Mariela 🇦🇷
-      </a>
-
-      <a href="https://wa.me/393517925007?text=Ciao%20Fabio!%20Confermo%20la%20mia%20presenza%20al%20matrimonio%20💗"
-         class="btn btn-outline" style="width:100%;">
-         Confirmar con Fabio 🇮🇹
-      </a>
+      <p class="card-text">
+        Podés confirmar enviando un mensaje de WhatsApp ♥️
+      </p>
     </div>
 
-    <!-- DRESS CODE -->
+    <!-- Dress code -->
     <div class="card">
       <div class="card-icon">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3l3 4-3 3-3-3 3-4z"/>
-            <path d="M6 21l2-10 4 4 4-4 2 10H6z"/>
-          </svg>
-        </div>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2l3 4-3 2-3-2zM9 8h6l3 12H6z"/>
+        </svg>
       </div>
-
-      <p class="card-title">Dress code & Niños</p>
-
+      <h3 class="card-title">Dress code &amp; niños</h3>
       <p class="card-text"><strong>Código de vestimenta:</strong> Elegante sport</p>
-
       <p class="card-text-italic">
         No niños. Queremos una pista llena de adultos, copas en alto… 🥂
       </p>
     </div>
 
-    <!-- REGALOS (ABAJO CENTRADO) -->
-    <div class="card regalos-card">
+    <!-- Regalos -->
+    <div class="card">
       <div class="card-icon">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="8" width="18" height="13" rx="2"/>
-            <path d="M3 12h18M12 8v13"/>
-          </svg>
-        </div>
+        <svg viewBox="0 0 24 24">
+          <path d="M3 9h18v12H3z"/>
+          <path d="M12 9V3M7 3c0 3 5 3 5 0s5 3 5 0"/>
+        </svg>
       </div>
-
-      <p class="card-title">Regalos</p>
+      <h3 class="card-title">Regalos</h3>
       <p class="card-text">Si desean hacernos un regalo, pueden hacerlo a:</p>
-
-      <p class="card-text"><strong>Alias:</strong> BodaMarieyFabio</p>
-      <p class="card-text"><strong>CBU:</strong> 3110017311000002663089</p>
+      <p class="card-text"><strong>Alias:</strong> BodaMarielyFabio</p>
+      <p class="card-text"><strong>CBU:</strong> 311001731100002663089</p>
     </div>
-
   </div>
 </section>
 
-<!-- MAPA -->
+<!-- CÓMO LLEGAR -->
 <section id="ubicacion">
   <p class="section-title">Cómo llegar</p>
   <h2 class="section-main-title">Ubicación del evento</h2>
-
+  <p class="section-text">
+    Predio “El Castillito” – Mutual del Banco del Chaco.
+  </p>
   <div class="map-container">
     <iframe
       class="map-iframe"
-      src="https://www.google.com/maps?q=El+Castillito+Resistencia+Chaco&output=embed">
+      src="https://www.google.com/maps?q=-27.4240655,-58.9482777&z=16&output=embed"
+      allowfullscreen
+      loading="lazy">
     </iframe>
   </div>
 </section>
 
-<!-- CONFIRMAR ASISTENCIA -->
+<!-- ¿NOS ACOMPAÑÁS? -->
 <section id="rsvp">
   <p class="section-title">Confirmar asistencia</p>
   <h2 class="section-main-title">¿Nos acompañás?</h2>
 
-  <div class="rsvp-box">
-    <p class="section-text">
-      Te pedimos que por favor confirmes tu asistencia antes del
-      <strong>25 de diciembre de 2025</strong> para poder organizar todo de la mejor manera.
-      <br><br>
-      Podés confirmar enviando un mensaje de WhatsApp ♥️
-    </p>
+  <p class="section-text" style="margin-bottom:22px;">
+    Te pedimos que por favor confirmes tu asistencia antes del
+    <strong>25 de diciembre de 2025</strong> para poder organizar todo de la mejor manera.
+    <br><br>
+    Podés confirmar enviando un mensaje de WhatsApp ♥️
+  </p>
 
-    <br>
-
-    <a href="https://wa.me/543624890118?text=Hola!%20Confirmo%20mi%20asistencia%20💗"
-       class="btn btn-primary" style="width:100%; margin-bottom:8px;">
-       Confirmar con Mariela 🇦🇷
+  <div style="display:flex; flex-direction:column; gap:12px; align-items:center; margin-top:8px;">
+    <a href="https://wa.me/5493624890118" target="_blank" class="rsvp-btn rsvp-ar">
+      🇦🇷 Confirmar con Mariela
     </a>
-
-    <a href="https://wa.me/393517925007?text=Ciao!%20Confermo%20la%20mia%20presenza%20💗"
-       class="btn btn-outline" style="width:100%;">
-       Confirmar con Fabio 🇮🇹
+    <a href="https://wa.me/393517925007" target="_blank" class="rsvp-btn rsvp-it">
+      🇮🇹 Confirmar con Fabio
     </a>
   </div>
 </section>
@@ -711,66 +191,67 @@
   <p class="section-title">Nuestra canción</p>
   <h2 class="section-main-title">Beautiful Day · U2</h2>
 
-  <p class="music-hint">Si querés, podés poner play a la canción mientras mirás la invitación 💗</p>
+  <p class="section-text" style="margin-bottom:18px;">
+    La canción se reproduce en silencio al entrar a la invitación.
+    Si querés escucharla, tocá el botón de “Escuchar canción” 🎵
+  </p>
+
+  <div style="margin:0 auto; max-width:800px; width:90%; position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:16px; border:1px solid #ddd;">
+    <iframe
+      id="musicFrame"
+      src="https://www.youtube.com/embed/co6WMzDOh1o?autoplay=1&mute=1&loop=1&playlist=co6WMzDOh1o"
+      allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+    </iframe>
+  </div>
+
+  <p class="music-hint">
+    La música está lista. Tocá el botón para activar el sonido 💕
+  </p>
 </section>
 
-<!-- BOTÓN DE MÚSICA -->
-<button class="music-button" onclick="toggleMusic()">🎵 Escuchar canción</button>
-
-<audio id="song" preload="auto">
-  <source src="https://dl.dropboxusercontent.com/scl/fi/7kplf05jwpx80gpt7s3fe/Beautiful-Day-U2.mp3?rlkey=1d8j8egv7luoldqhxuclplm6m&dl=0" type="audio/mpeg">
-</audio>
+<!-- BOTÓN FLOTANTE MÚSICA -->
+<button id="musicButton" class="music-button">
+  🎵 Escuchar canción
+</button>
 
 <!-- FOOTER -->
 <footer>
-  Gracias por ser parte de este día tan especial 💗  
-  <br>
-  Mariela & Fabio
+  Gracias por ser parte de este día tan especial 💕<br>
+  <strong>Mariela &amp; Fabio</strong>
 </footer>
 
+<!-- SCRIPTS FINALES -->
 <script>
-/* CORAZONES */
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 4 + Math.random() * 3 + "s";
-
-  heart.innerHTML = `
-    <svg viewBox="0 0 24 24">
-      <path d="M12 21s-6-4.5-9-9C-1 7 1 2 5 2c2 0 4 2 5 3 1-1 3-3 5-3 4 0 6 5 2 10-3 4.5-9 9-9 9z"/>
-    </svg>
-  `;
-
-  document.getElementById("hearts-container").appendChild(heart);
-
-  setTimeout(() => heart.remove(), 7000);
-}
-
-setInterval(createHeart, 250);
-
-/* CUENTA REGRESIVA */
-const target = new Date("2026-01-17T20:45:00").getTime();
-setInterval(() => {
-  const now = Date.now();
-  const diff = target - now;
-
-  document.getElementById("days").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("hours").textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  document.getElementById("minutes").textContent = Math.floor((diff / (1000 * 60)) % 60);
-  document.getElementById("seconds").textContent = Math.floor((diff / 1000) % 60);
-}, 1000);
-
-/* MÚSICA */
-function toggleMusic() {
-  const song = document.getElementById("song");
-
-  if (song.paused) {
-    song.play();
-  } else {
-    song.pause();
+  // Cuenta regresiva
+  const targetDate = new Date("2026-01-17T20:45:00-03:00").getTime();
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+    if (diff < 0) return;
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff / (1000*60*60)) % 24);
+    const m = Math.floor((diff / (1000*60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    document.getElementById("days").textContent = d;
+    document.getElementById("hours").textContent = h.toString().padStart(2,"0");
+    document.getElementById("minutes").textContent = m.toString().padStart(2,"0");
+    document.getElementById("seconds").textContent = s.toString().padStart(2,"0");
   }
-}
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Botón música
+  const musicBtn = document.getElementById("musicButton");
+  const musicFrame = document.getElementById("musicFrame");
+  if (musicBtn && musicFrame) {
+    musicBtn.addEventListener("click", () => {
+      const newUrl = "https://www.youtube.com/embed/co6WMzDOh1o?autoplay=1&mute=0&loop=1&playlist=co6WMzDOh1o";
+      musicFrame.src = newUrl;
+      musicBtn.style.display = "none";
+    });
+  }
 </script>
 
 </body>
