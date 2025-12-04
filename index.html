@@ -85,15 +85,18 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+
       background-image:
         linear-gradient(
           rgba(0, 0, 0, 0.35),
           rgba(0, 0, 0, 0.35)
         ),
         url("https://i.imgur.com/reQzolk.png"); /* FOTO PORTADA */
-      background-size: contain;
-      background-repeat: no-repeat;
+
+      background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+
       color: #fff;
       padding: 0 16px;
       position: relative;
@@ -227,7 +230,7 @@
       color: #777;
     }
 
-    /* CORAZONES MEJORADOS */
+    /* CORAZONES */
     #hearts-container {
       position: fixed;
       pointer-events: none;
@@ -388,6 +391,40 @@
       color: #777;
     }
 
+    /* BOTÓN MÚSICA + TEXTO */
+    .music-hint {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 12px;
+      color: #555;
+    }
+
+    .music-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #c9a27f;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 9999;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .music-button:hover {
+      transform: scale(1.05);
+      opacity: 0.95;
+    }
+
+    /* REGALOS ABAJO */
+    .regalos-card {
+      grid-column: 1 / -1;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 600px) {
       .hero-names {
@@ -537,21 +574,18 @@
 
   <div class="cards">
 
-    <!-- LUGAR -->
+    <!-- LUGAR & HORARIO -->
     <div class="card">
       <div class="card-icon">
         <div class="icon-circle">
           <svg viewBox="0 0 24 24">
-            <path d="M8 5h8l-1 5h-6l-1-5z"></path>
-            <path d="M10 14v7"></path>
-            <path d="M14 14v7"></path>
-            <path d="M7 5h10"></path>
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M4 22c0-4 4-7 8-7s8 3 8 7"/>
           </svg>
         </div>
       </div>
 
       <p class="card-title">Lugar & Horario</p>
-
       <p class="card-text"><strong>Fecha:</strong> 17 de enero de 2026</p>
       <p class="card-text"><strong>Hora:</strong> 20:45 hs</p>
       <p class="card-text"><strong>Predio:</strong> “El Castillito” – Mutual del Banco del Chaco</p>
@@ -563,29 +597,41 @@
       <div class="card-icon">
         <div class="icon-circle">
           <svg viewBox="0 0 24 24">
-            <path d="M3 17h18"></path>
-            <path d="M3 12h18"></path>
-            <path d="M3 7h18"></path>
+            <rect x="4" y="4" width="16" height="16" rx="2"/>
+            <path d="M8 12h8M12 8v8"/>
           </svg>
         </div>
       </div>
 
       <p class="card-title">Asistencia</p>
 
-      <p class="card-text">Te pedimos que por favor confirmes tu asistencia antes del <strong>25 de diciembre de 2025</strong>.</p>
-      <p class="card-text">Podés confirmar enviando un mensaje de WhatsApp.</p>
+      <p class="card-text">
+        Te pedimos que por favor confirmes tu asistencia antes del
+        <strong>25 de diciembre de 2025</strong> para poder organizar todo de la mejor manera.
+      </p>
+      <p class="card-text">Podés confirmar enviando un mensaje de WhatsApp. ♥️</p>
+
+      <br>
+
+      <!-- BOTONES WHATSAPP -->
+      <a href="https://wa.me/543624890118?text=Hola%20Mariela!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20💗"
+         class="btn btn-primary" style="width:100%; margin-bottom:8px;">
+         Confirmar con Mariela 🇦🇷
+      </a>
+
+      <a href="https://wa.me/393517925007?text=Ciao%20Fabio!%20Confermo%20la%20mia%20presenza%20al%20matrimonio%20💗"
+         class="btn btn-outline" style="width:100%;">
+         Confirmar con Fabio 🇮🇹
+      </a>
     </div>
 
-    <!-- DRESS CODE & NIÑOS -->
+    <!-- DRESS CODE -->
     <div class="card">
       <div class="card-icon">
         <div class="icon-circle">
-          <!-- COPITAS -->
-          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#c9a27f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 5h8l-1 5h-6l-1-5z" />
-            <path d="M10 14v7" />
-            <path d="M14 14v7" />
-            <path d="M7 5h10" />
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3l3 4-3 3-3-3 3-4z"/>
+            <path d="M6 21l2-10 4 4 4-4 2 10H6z"/>
           </svg>
         </div>
       </div>
@@ -595,25 +641,24 @@
       <p class="card-text"><strong>Código de vestimenta:</strong> Elegante sport</p>
 
       <p class="card-text-italic">
-        No niños. Queremos una pista llena de adultos, copas en alto...
+        No niños. Queremos una pista llena de adultos, copas en alto… 🥂
       </p>
     </div>
 
-    <!-- REGALOS -->
-    <div class="card">
+    <!-- REGALOS (ABAJO CENTRADO) -->
+    <div class="card regalos-card">
       <div class="card-icon">
         <div class="icon-circle">
           <svg viewBox="0 0 24 24">
-            <path d="M20 12v8H4v-8"></path>
-            <path d="M12 12V4"></path>
-            <path d="M4 8h16"></path>
+            <rect x="3" y="8" width="18" height="13" rx="2"/>
+            <path d="M3 12h18M12 8v13"/>
           </svg>
         </div>
       </div>
 
       <p class="card-title">Regalos</p>
-
       <p class="card-text">Si desean hacernos un regalo, pueden hacerlo a:</p>
+
       <p class="card-text"><strong>Alias:</strong> BodaMarieyFabio</p>
       <p class="card-text"><strong>CBU:</strong> 3110017311000002663089</p>
     </div>
@@ -621,48 +666,43 @@
   </div>
 </section>
 
-<!-- UBICACIÓN -->
+<!-- MAPA -->
 <section id="ubicacion">
   <p class="section-title">Cómo llegar</p>
-  <h2 class="section-main-title">Ubicación del predio</h2>
+  <h2 class="section-main-title">Ubicación del evento</h2>
 
   <div class="map-container">
     <iframe
       class="map-iframe"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.7281530136!2d-58.9508526!3d-27.4240607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450dbc7c424b9f%3A0xeaa1d4178f6624a3!2sPredio%20%22El%20Castillito%22%20-%20Mutual%20del%20Banco%20del%20Chaco!5e0!3m2!1ses-419!2sar!4v1700000000000"
-      allowfullscreen="" loading="lazy">
+      src="https://www.google.com/maps?q=El+Castillito+Resistencia+Chaco&output=embed">
     </iframe>
   </div>
 </section>
 
-<!-- RSVP -->
+<!-- CONFIRMAR ASISTENCIA -->
 <section id="rsvp">
   <p class="section-title">Confirmar asistencia</p>
   <h2 class="section-main-title">¿Nos acompañás?</h2>
 
   <div class="rsvp-box">
-    <p style="font-size:15px; text-align:center; margin-bottom:20px;">
-      Confirmá tu asistencia antes del <strong>25 de diciembre de 2025</strong>.
-      Podés hacerlo enviando un mensaje de WhatsApp ♥️
+    <p class="section-text">
+      Te pedimos que por favor confirmes tu asistencia antes del
+      <strong>25 de diciembre de 2025</strong> para poder organizar todo de la mejor manera.
+      <br><br>
+      Podés confirmar enviando un mensaje de WhatsApp ♥️
     </p>
 
-    <div style="display:flex; flex-direction:column; gap:14px; align-items:center; margin-top:10px;">
+    <br>
 
-      <!-- MARIELA 🇦🇷 -->
-      <a href="https://wa.me/543624890118?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20🥰"
-         class="btn btn-primary"
-         style="width:240px; text-align:center;">
-         Confirmar con Mariela 🇦🇷
-      </a>
+    <a href="https://wa.me/543624890118?text=Hola!%20Confirmo%20mi%20asistencia%20💗"
+       class="btn btn-primary" style="width:100%; margin-bottom:8px;">
+       Confirmar con Mariela 🇦🇷
+    </a>
 
-      <!-- FABIO 🇮🇹 -->
-      <a href="https://wa.me/393517925007?text=Hello!%20I%20confirm%20my%20attendance%20to%20the%20wedding%20🥰"
-         class="btn btn-primary"
-         style="width:240px; text-align:center; background:#b28d74;">
-         Confirmar con Fabio 🇮🇹
-      </a>
-
-    </div>
+    <a href="https://wa.me/393517925007?text=Ciao!%20Confermo%20la%20mia%20presenza%20💗"
+       class="btn btn-outline" style="width:100%;">
+       Confirmar con Fabio 🇮🇹
+    </a>
   </div>
 </section>
 
@@ -671,57 +711,66 @@
   <p class="section-title">Nuestra canción</p>
   <h2 class="section-main-title">Beautiful Day · U2</h2>
 
-  <p class="section-text">
-    La canción se reproduce en silencio al entrar a la invitación.  
-    Si querés escucharla, quitá el mute o tocá play 🎶💗
-  </p>
-
-  <div class="video-container" style="margin-top:24px; position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:16px; border:1px solid #ddd;">
-    <iframe
-      src="https://www.youtube.com/embed/co6WMzDOh1o?autoplay=1&mute=1&loop=1&playlist=co6WMzDOh1o"
-      allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      style="position:absolute; top:0; left:0; width:100%; height:100%;">
-    </iframe>
-  </div>
+  <p class="music-hint">Si querés, podés poner play a la canción mientras mirás la invitación 💗</p>
 </section>
 
+<!-- BOTÓN DE MÚSICA -->
+<button class="music-button" onclick="toggleMusic()">🎵 Escuchar canción</button>
+
+<audio id="song" preload="auto">
+  <source src="https://dl.dropboxusercontent.com/scl/fi/7kplf05jwpx80gpt7s3fe/Beautiful-Day-U2.mp3?rlkey=1d8j8egv7luoldqhxuclplm6m&dl=0" type="audio/mpeg">
+</audio>
+
+<!-- FOOTER -->
 <footer>
-  Gracias por ser parte de este día tan especial 💗
+  Gracias por ser parte de este día tan especial 💗  
+  <br>
+  Mariela & Fabio
 </footer>
 
-<!-- SCRIPTS -->
-
-<!-- Corazones -->
 <script>
+/* CORAZONES */
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 4 + Math.random() * 3 + "s";
+
   heart.innerHTML = `
     <svg viewBox="0 0 24 24">
-      <path d="M12 21s-7.5-4.35-10-9c-2.5-4.65-.5-10 5-10 3 0 5 2 5 2s2-2 5-2c5.5 0 7.5 5.35 5 10-2.5 4.65-10 9-10 9z"/>
-    </svg>`;
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+      <path d="M12 21s-6-4.5-9-9C-1 7 1 2 5 2c2 0 4 2 5 3 1-1 3-3 5-3 4 0 6 5 2 10-3 4.5-9 9-9 9z"/>
+    </svg>
+  `;
+
   document.getElementById("hearts-container").appendChild(heart);
-  setTimeout(() => heart.remove(), 8000);
+
+  setTimeout(() => heart.remove(), 7000);
 }
-setInterval(createHeart, 350);
-</script>
 
-<!-- CountDown -->
-<script>
-const weddingDate = new Date("January 17, 2026 20:45:00").getTime();
+setInterval(createHeart, 250);
 
-setInterval(function() {
+/* CUENTA REGRESIVA */
+const target = new Date("2026-01-17T20:45:00").getTime();
+setInterval(() => {
   const now = Date.now();
-  const distance = weddingDate - now;
+  const diff = target - now;
 
-  document.getElementById("days").innerText = Math.floor(distance / (1000*60*60*24));
-  document.getElementById("hours").innerText = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-  document.getElementById("minutes").innerText = Math.floor((distance % (1000*60*60)) / (1000*60));
-  document.getElementById("seconds").innerText = Math.floor((distance % (1000*60)) / 1000);
+  document.getElementById("days").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("minutes").textContent = Math.floor((diff / (1000 * 60)) % 60);
+  document.getElementById("seconds").textContent = Math.floor((diff / 1000) % 60);
 }, 1000);
+
+/* MÚSICA */
+function toggleMusic() {
+  const song = document.getElementById("song");
+
+  if (song.paused) {
+    song.play();
+  } else {
+    song.pause();
+  }
+}
 </script>
 
 </body>
