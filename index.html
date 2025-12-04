@@ -15,7 +15,7 @@
       --bg: #f7f1e8;
       --card: #ffffff;
       --accent: #c7926b;
-      --accent-soft: rgba(199,146,107,0.12);
+      --accent-soft: rgba(199,146,107,0.16);
       --text-main: #3c3027;
       --text-soft: #7a6c61;
       --heart: #e28b8b;
@@ -112,7 +112,7 @@
 
     .heart {
       position: absolute;
-      font-size: 14px;
+      font-size: 22px; /* más grandes */
       color: var(--heart);
       opacity: 0;
       animation: floatUp linear forwards;
@@ -120,13 +120,13 @@
 
     @keyframes floatUp {
       0% {
-        transform: translateY(0) translateX(0) scale(0.8);
+        transform: translateY(0) translateX(0) scale(0.9);
         opacity: 0;
       }
-      10% { opacity: 0.9; }
-      90% { opacity: 0.9; }
+      15% { opacity: 0.97; }
+      85% { opacity: 0.97; }
       100% {
-        transform: translateY(-120vh) translateX(40px) scale(1.1);
+        transform: translateY(-130vh) translateX(40px) scale(1.1);
         opacity: 0;
       }
     }
@@ -192,17 +192,6 @@
       box-shadow: 0 16px 30px rgba(199,146,107,0.55);
     }
 
-    .btn-ghost {
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.6);
-    }
-
-    .btn-ghost:hover {
-      background: #fff;
-      color: var(--accent);
-    }
-
     .btn-outline-dark {
       background: transparent;
       border: 1px solid var(--accent);
@@ -215,120 +204,24 @@
       color: #fff;
     }
 
-    /* HERO ----------------------------------------------------- */
+    /* HERO – PORTADA COMPLETA ---------------------------------- */
     .hero {
-      padding: 70px 18px 80px;
+      padding: 0;
     }
 
-    .hero-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-card {
+    .hero-full {
       position: relative;
+      height: 100vh;
+      max-height: 100vh;
       width: 100%;
-      max-width: 520px;
-      background: #e0dedf;
-      border-radius: 26px;
-      padding: 40px 26px 34px;
-      text-align: center;
-      box-shadow: var(--shadow-soft);
       overflow: hidden;
     }
 
-    .hero-card::before,
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.18);
-      filter: blur(4px);
-      z-index: -1;
-    }
-
-    .hero-card::before {
-      top: -80px;
-      left: -60px;
-    }
-
-    .hero-card::after {
-      bottom: -80px;
-      right: -70px;
-    }
-
-    .hero-top {
-      font-family: "Dancing Script", cursive;
-      font-size: 2.9rem;
-      margin-bottom: 4px;
-    }
-
-    .hero-kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.8rem;
-      color: #f4e1d5;
-      margin-bottom: 12px;
-    }
-
-    .hero-names {
-      font-size: 2.1rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .hero-heart {
-      font-size: 1.2rem;
-      color: #d76868;
-      display: block;
-      margin: 0 auto 12px;
-    }
-
-    .hero-date {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .hero-place {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      margin-bottom: 16px;
-    }
-
-    .hero-map {
+    .hero-full img {
       width: 100%;
-      max-width: 380px;
-      margin: 10px auto 20px;
+      height: 100%;
+      object-fit: cover; /* sin bordes, cubre todo */
       display: block;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.4);
-      object-fit: cover;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    @media (max-width: 600px) {
-      .hero-card {
-        padding: 32px 18px 28px;
-      }
-      .hero-top {
-        font-size: 2.4rem;
-      }
-      .hero-names {
-        font-size: 1.7rem;
-      }
     }
 
     /* NOSOTROS ------------------------------------------------- */
@@ -435,12 +328,13 @@
       width: 38px;
       height: 38px;
       border-radius: 999px;
-      background: var(--accent-soft);
+      background: var(--accent-soft); /* nude */
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 10px;
       font-size: 1.1rem;
+      color: var(--accent); /* icono acorde */
     }
 
     .detail-title {
@@ -526,41 +420,52 @@
     }
 
     /* MÚSICA --------------------------------------------------- */
-    .music-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: center;
-    }
-
     .music-text {
       font-size: 0.95rem;
       color: var(--text-soft);
-      margin-bottom: 14px;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 8px;
     }
 
-    .music-note {
-      font-size: 1.4rem;
-      margin-right: 6px;
+    /* BOTÓN FLOTANTE DE MÚSICA -------------------------------- */
+    .music-toggle {
+      position: fixed;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: none;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
-    .music-video {
-      background: var(--card);
-      border-radius: var(--radius-card);
-      padding: 14px;
-      box-shadow: var(--shadow-soft);
+    .music-toggle:hover {
+      transform: translateY(-50%) translateY(-1px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.28);
+      background: #fdf7f1;
     }
 
-    .music-video iframe {
-      width: 100%;
-      height: 250px;
-      border: 0;
-      border-radius: 14px;
+    .music-icon {
+      font-size: 1.3rem;
     }
 
-    @media (max-width: 880px) {
-      .music-layout {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .music-toggle {
+        padding: 10px;
+      }
+      .music-toggle span.music-label {
+        display: none;
       }
     }
 
@@ -574,6 +479,15 @@
   </style>
 </head>
 <body>
+
+  <!-- AUDIO (cambiá cancion.mp3 por tu archivo real) -->
+  <audio id="bgMusic" src="cancion.mp3" loop></audio>
+
+  <!-- BOTÓN FLOTANTE MÚSICA -->
+  <button class="music-toggle" id="musicToggle" aria-label="Reproducir música">
+    <span class="music-icon" id="musicIcon">▶️</span>
+    <span class="music-label">Música</span>
+  </button>
 
   <!-- CAPA DE CORAZONES -->
   <div class="hearts-layer" id="heartsLayer"></div>
@@ -595,27 +509,11 @@
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO – PORTADA COMPLETA -->
     <section class="hero" id="inicio">
-      <div class="hero-inner">
-        <div class="hero-card">
-          <div class="hero-top">Insieme</div>
-          <div class="hero-kicker">Celebramos el amor</div>
-          <h1 class="hero-names">Mariela &amp; Fabio</h1>
-
-          <span class="hero-heart">❤️</span>
-
-          <p class="hero-date">Sábado 17 de enero de 2026</p>
-          <p class="hero-place">Predio “El Castillito” · Resistencia, Chaco</p>
-
-          <!-- Cambiá este src por la imagen de los mapas de Italia y Argentina que vos ya tenías -->
-          <img src="img/portada-mapas.png" alt="Mapa Argentina e Italia con corazón" class="hero-map">
-
-          <div class="hero-buttons">
-            <a href="#detalles" class="btn btn-primary">Ver detalles</a>
-            <a href="#asistencia" class="btn btn-ghost">Confirmar asistencia</a>
-          </div>
-        </div>
+      <div class="hero-full">
+        <!-- Portada con tu imagen, sin texto extra -->
+        <img src="https://i.imgur.com/14yaOzQ.png" alt="Portada Mariela y Fabio">
       </div>
     </section>
 
@@ -673,11 +571,10 @@
       </div>
 
       <div class="gallery-grid">
-        <!-- Usá las mismas URLs Imgur que ya tenías -->
         <img src="https://i.imgur.com/vWerE6N.jpeg" alt="Foto 1">
         <img src="https://i.imgur.com/4AHnxv4.jpeg" alt="Foto 2">
-        <img src="https://i.imgur.com/XXXXX.jpeg" alt="Foto 3">
-        <img src="https://i.imgur.com/YYYYY.jpeg" alt="Foto 4">
+        <img src="https://i.imgur.com/UxWpdX0.jpeg" alt="Foto 3">
+        <img src="https://i.imgur.com/rHdy0rn.jpeg" alt="Foto 4">
       </div>
     </section>
 
@@ -742,7 +639,6 @@
       </div>
 
       <div class="map-card">
-        <!-- Mapa centrado en RN16, Chaco (coordenadas aproximadas del predio) -->
         <iframe
           loading="lazy"
           src="https://www.google.com/maps?q=-27.4241942,-58.9488133&hl=es&z=15&output=embed"
@@ -798,28 +694,11 @@
         <h2 class="section-title">Beautiful Day · U2</h2>
       </div>
 
-      <div class="music-layout">
-        <div>
-          <p class="music-text">
-            La canción se reproduce en <strong>silencio</strong> al entrar a la invitación.
-            Si querés escucharla, quitá el mute del video o tocá play
-            <span class="music-note">🎶💗</span>
-          </p>
-          <p class="music-text">
-            La música está lista, solo tenés que activar el sonido cuando quieras.
-          </p>
-        </div>
-
-        <div class="music-video">
-          <!-- Video de U2 con autoplay en mute -->
-          <iframe
-            src="https://www.youtube.com/embed/co6WMzDOh1o?autoplay=1&mute=1&loop=1&playlist=co6WMzDOh1o"
-            title="Beautiful Day · U2"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
+      <p class="music-text">
+        La música de fondo se reproduce automáticamente (si el navegador lo permite).
+        Podés pausarla o volver a reproducirla tocando el botón flotante de
+        <strong>Música</strong> que está al costado derecho de la pantalla. 🎶💗
+      </p>
     </section>
   </main>
 
@@ -829,7 +708,7 @@
   </footer>
 
   <script>
-    // CORAZONES FLOTANTES ------------------------------
+    // CORAZONES FLOTANTES -----------------------------------
     const heartsLayer = document.getElementById('heartsLayer');
 
     function createHeart() {
@@ -838,7 +717,7 @@
       heart.className = 'heart';
 
       const startLeft = Math.random() * 100; // vw
-      const duration = 8000 + Math.random() * 6000;
+      const duration = 7000 + Math.random() * 5000;
 
       heart.style.left = startLeft + 'vw';
       heart.style.bottom = '-40px';
@@ -847,13 +726,16 @@
       heartsLayer.appendChild(heart);
 
       setTimeout(() => {
-        heartsLayer.removeChild(heart);
+        if (heart.parentNode) {
+          heartsLayer.removeChild(heart);
+        }
       }, duration + 1000);
     }
 
-    setInterval(createHeart, 900);
+    // Más corazones (más frecuencia)
+    setInterval(createHeart, 400);
 
-    // CUENTA REGRESIVA ---------------------------------
+    // CUENTA REGRESIVA --------------------------------------
     const targetDate = new Date('2026-01-17T20:45:00-03:00').getTime();
 
     function updateCountdown() {
@@ -887,6 +769,48 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // MÚSICA -------------------------------------------------
+    const audio = document.getElementById('bgMusic');
+    const toggleBtn = document.getElementById('musicToggle');
+    const musicIcon = document.getElementById('musicIcon');
+
+    let isPlaying = false;
+
+    // Intentar autoplay al cargar (algunos navegadores pueden bloquearlo)
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!audio) return;
+      audio.volume = 1;
+      audio.play().then(() => {
+        isPlaying = true;
+        musicIcon.textContent = '⏸️';
+        toggleBtn.setAttribute('aria-label', 'Pausar música');
+      }).catch(() => {
+        // Autoplay bloqueado, se queda en pausa hasta que toquen el botón
+        isPlaying = false;
+        musicIcon.textContent = '▶️';
+        toggleBtn.setAttribute('aria-label', 'Reproducir música');
+      });
+    });
+
+    toggleBtn.addEventListener('click', () => {
+      if (!audio) return;
+      if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        musicIcon.textContent = '▶️';
+        toggleBtn.setAttribute('aria-label', 'Reproducir música');
+      } else {
+        audio.play().then(() => {
+          isPlaying = true;
+          musicIcon.textContent = '⏸️';
+          toggleBtn.setAttribute('aria-label', 'Pausar música');
+        }).catch(() => {
+          // por si el navegador requiere otra interacción
+        });
+      }
+    });
   </script>
 </body>
 </html>
+
