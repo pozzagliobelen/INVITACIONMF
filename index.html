@@ -232,9 +232,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #ffffff;
+      color: #b28b6d;          /* ← antes era blanco */
       padding: 0 20px;
-      text-shadow: 0 3px 14px rgba(0,0,0,0.6);
+      text-shadow: none;       /* ← sin sombra blanca */
     }
 
     .hero-names {
@@ -528,8 +528,8 @@
 </head>
 <body>
 
-  <!-- AUDIO: subí tu MP3 y cambiá la ruta si hace falta -->
-  <audio id="bgMusic" src="U2 - Beautiful Day (Official Music Video).mp3.download.zip" loop></audio>
+  <!-- AUDIO -->
+  <audio id="bgMusic" src="musica.mp3" loop></audio>
 
   <!-- BOTÓN FLOTANTE MÚSICA -->
   <button class="music-toggle" id="musicToggle" aria-label="Reproducir música">
@@ -720,22 +720,23 @@
 
         <div class="rsvp-buttons">
           <!-- Cambiá los números por los reales -->
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/5490000000000?text=Hola%20Mariela!%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20boda.%20💍"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Confirmar con Mariela <span class="rsvp-flag">🇦🇷</span>
-          </a>
+         <a
+  class="btn btn-primary"
+  href="https://wa.me/5493624890119?text=Hola%20Mariela!%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20boda.%20💍"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Confirmar con Mariela <span class="rsvp-flag">🇦🇷</span>
+</a>
 
-          <a
-            class="btn btn-outline-dark"
-            href="https://wa.me/390000000000?text=Ciao%20Fabio!%20Voglio%20confermare%20la%20mia%20presenza%20al%20matrimonio.%20💍"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Confirmar con Fabio <span class="rsvp-flag">🇮🇹</span>
+<a
+  class="btn btn-outline-dark"
+  href="https://wa.me/393517925007?text=Ciao%20Fabio!%20Voglio%20confermare%20la%20mia%20presenza%20al%20matrimonio.%20💍"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Confirmar con Fabio <span class="rsvp-flag">🇮🇹</span>
+
           </a>
         </div>
       </div>
