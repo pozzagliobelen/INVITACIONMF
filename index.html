@@ -229,25 +229,29 @@
       color: #fff;
     }
 
-    /* HERO – PORTADA COMPLETA ---------------------------------- */
-    .hero {
-      padding: 0;
-    }
+    /* HERO – PORTADA ------------------------------------------- */
+.hero {
+  padding: 40px 18px 10px;   /* deja aire entre el menú y la imagen */
+}
 
-    .hero-full {
-      position: relative;
-      height: 75vh;          /* 🔹 ya no ocupa toda la pantalla */
-      max-height: 620px;
-      width: 100%;
-      overflow: hidden;
-    }
+.hero-full {
+  position: relative;
+  width: 100%;
+  max-width: 960px;          /* ancho máx de la portada (tarjetita) */
+  margin: 0 auto 10px;       /* centrada y con espacio abajo */
+  border-radius: 24px;       /* puntas redondeadas lindas */
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);  /* sombrita como en tu captura */
+}
 
-    .hero-full img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+/* ahora la imagen mantiene su proporción y se ve completa */
+.hero-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 
     /* capa oscura encima de la imagen */
     .hero-full::before {
