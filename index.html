@@ -191,6 +191,39 @@
       border-radius: 999px;
     }
 
+    /* PASE PARA DOS PERSONAS -------------------------------- */
+    .pass-wrapper {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .pass-icon {
+      width: 85px;
+      height: auto;
+      margin: 0 auto 10px;
+    }
+
+    .pass-icon svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pass-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    @media (max-width: 600px) {
+      .pass-title {
+        font-size: 2rem;
+      }
+    }
+
     /* BOTONES -------------------------------------------------- */
     .btn {
       display: inline-flex;
@@ -230,35 +263,32 @@
     }
 
     /* HERO – PORTADA ------------------------------------------- */
-.hero {
-  padding: 40px 18px 10px;   /* deja aire entre el menú y la imagen */
-}
+    .hero {
+      padding: 40px 18px 10px;
+    }
 
-.hero-full {
-  position: relative;
-  width: 100%;
-  max-width: 960px;          /* ancho máx de la portada (tarjetita) */
-  margin: 0 auto 10px;       /* centrada y con espacio abajo */
-  border-radius: 24px;       /* puntas redondeadas lindas */
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);  /* sombrita como en tu captura */
-}
+    .hero-full {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto 10px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
 
-/* ahora la imagen mantiene su proporción y se ve completa */
-.hero-full img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
+    .hero-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
 
-
-    /* capa oscura encima de la imagen */
     .hero-full::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.38);  /* 🔹 oscurece la foto */
+      background: rgba(0, 0, 0, 0.38);
       z-index: 1;
     }
 
@@ -270,10 +300,10 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #ffffff;          /* 🔹 texto blanco */
+      color: #ffffff;
       padding: 0 20px;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.7); /* para que resalte más */
-      z-index: 2;              /* por encima de la capa oscura */
+      text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+      z-index: 2;
     }
 
     .hero-names {
@@ -394,7 +424,7 @@
       }
     }
 
-    /* DETALLES ------------------------------------------------- */
+    /* DETALLES -------------------------------------------------- */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -599,9 +629,7 @@
     <!-- HERO – PORTADA COMPLETA -->
     <section class="hero" id="inicio">
       <div class="hero-full">
-        <!-- Portada con tu imagen (NUEVA) -->
         <img src="https://i.imgur.com/EYj5SKB.jpeg" alt="Portada Mariela y Fabio">
-        <!-- Texto encima -->
         <div class="hero-overlay">
           <h1 class="hero-names">Mariela &amp; Fabio</h1>
           <p class="hero-date">Sábado 17 de enero de 2026</p>
@@ -618,7 +646,7 @@
 
     <!-- NOSOTROS -->
     <section class="section" id="nosotros">
-           <div class="section-header">
+      <div class="section-header">
         <div class="pass-wrapper">
           <div class="pass-icon" aria-hidden="true">
             <svg viewBox="0 0 64 40">
@@ -644,10 +672,6 @@
         <h3 class="story-title">Un día especial</h3>
       </div>
 
-        <div class="kicker">Pase para dos personas</div>
-        <h2 class="section-title">Nuestra historia</h2>
-        <h3 class="story-title">Un día especial</h3>
-      </div>
       <p class="story-text">
         Con mucha alegría queremos compartir con ustedes un momento muy importante de nuestras vidas:
         ¡nos casamos! Nos encantaría que nos acompañen en este día tan especial que será un asado
@@ -709,48 +733,48 @@
         <h2 class="section-title">Detalles del evento</h2>
       </div>
 
-    <div class="cards-grid">
-      <article class="detail-card">
-        <div class="detail-icon"><span class="detail-icon-symbol">⌂</span></div>
-        <div class="detail-title">Lugar &amp; horario</div>
-        <div class="detail-heading">Fecha: 17 de enero de 2026</div>
-        <p class="detail-text">
-          <strong>Hora:</strong> 20:45 hs<br>
-          <strong>Predio:</strong> “El Castillito” – Mutual del Banco del Chaco<br>
-          <strong>Dirección:</strong> RN16, KM 11.5 · Colectora Norte · Resistencia
-        </p>
-      </article>
+      <div class="cards-grid">
+        <article class="detail-card">
+          <div class="detail-icon"><span class="detail-icon-symbol">⌂</span></div>
+          <div class="detail-title">Lugar &amp; horario</div>
+          <div class="detail-heading">Fecha: 17 de enero de 2026</div>
+          <p class="detail-text">
+            <strong>Hora:</strong> 20:45 hs<br>
+            <strong>Predio:</strong> “El Castillito” – Mutual del Banco del Chaco<br>
+            <strong>Dirección:</strong> RN16, KM 11.5 · Colectora Norte · Resistencia
+          </p>
+        </article>
 
-      <article class="detail-card">
-        <div class="detail-icon"><span class="detail-icon-symbol">♡</span></div>
-        <div class="detail-title">Asistencia</div>
-        <p class="detail-text">
-          Te pedimos que por favor confirmes tu asistencia antes del
-          <strong>25 de diciembre de 2025</strong>.<br><br>
-          Podés confirmar enviando un mensaje de WhatsApp.
-        </p>
-      </article>
+        <article class="detail-card">
+          <div class="detail-icon"><span class="detail-icon-symbol">♡</span></div>
+          <div class="detail-title">Asistencia</div>
+          <p class="detail-text">
+            Te pedimos que por favor confirmes tu asistencia antes del
+            <strong>25 de diciembre de 2025</strong>.<br><br>
+            Podés confirmar enviando un mensaje de WhatsApp.
+          </p>
+        </article>
 
-      <article class="detail-card">
-        <div class="detail-icon"><span class="detail-icon-symbol">✧</span></div>
-        <div class="detail-title">Dress code &amp; niños</div>
-        <p class="detail-text">
-          <strong>Código de vestimenta:</strong> Elegante sport.<br><br>
-          No niños. Queremos una pista llena de adultos, copas en alto…
-        </p>
-      </article>
+        <article class="detail-card">
+          <div class="detail-icon"><span class="detail-icon-symbol">✧</span></div>
+          <div class="detail-title">Dress code &amp; niños</div>
+          <p class="detail-text">
+            <strong>Código de vestimenta:</strong> Elegante sport.<br><br>
+            No niños. Queremos una pista llena de adultos, copas en alto…
+          </p>
+        </article>
 
-      <article class="detail-card">
-        <div class="detail-icon"><span class="detail-icon-symbol">✿</span></div>
-        <div class="detail-title">Regalos</div>
-        <p class="detail-text">
-          No son requisitos, pero si igual insistís, te dejamos nuestros datos
-          para ayudarnos con la luna de miel:<br><br>
-          <strong>Alias:</strong> BodaMarielyFabio<br>
-          <strong>CBU:</strong> 311001731100002663089
-        </p>
-      </article>
-    </div>
+        <article class="detail-card">
+          <div class="detail-icon"><span class="detail-icon-symbol">✿</span></div>
+          <div class="detail-title">Regalos</div>
+          <p class="detail-text">
+            No son requisitos, pero si igual insistís, te dejamos nuestros datos
+            para ayudarnos con la luna de miel:<br><br>
+            <strong>Alias:</strong> BodaMarielyFabio<br>
+            <strong>CBU:</strong> 311001731100002663089
+          </p>
+        </article>
+      </div>
     </section>
 
     <!-- CÓMO LLEGAR -->
