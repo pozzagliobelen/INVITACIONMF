@@ -224,6 +224,47 @@
       display: block;
     }
 
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 0 20px;
+      text-shadow: 0 3px 14px rgba(0,0,0,0.6);
+    }
+
+    .hero-names {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-date {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-place {
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero-names {
+        font-size: 2.1rem;
+      }
+      .hero-date {
+        font-size: 1rem;
+      }
+      .hero-place {
+        font-size: 0.9rem;
+      }
+    }
+
     /* NOSOTROS ------------------------------------------------- */
     .story-text {
       max-width: 640px;
@@ -298,6 +339,10 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .gallery-img-1 {
+      object-position: top center; /* muestra más la parte superior, para que no corte la cabeza */
+    }
+
     @media (max-width: 900px) {
       .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -333,8 +378,11 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 10px;
+    }
+
+    .detail-icon-symbol {
       font-size: 1.1rem;
-      color: var(--accent); /* icono acorde */
+      color: var(--accent); /* icono nude/marrón */
     }
 
     .detail-title {
@@ -480,8 +528,8 @@
 </head>
 <body>
 
-  <!-- AUDIO (cambiá cancion.mp3 por tu archivo real) -->
-  <audio id="bgMusic" src="cancion.mp3" loop></audio>
+  <!-- AUDIO: subí tu MP3 y cambiá la ruta si hace falta -->
+  <audio id="bgMusic" src="U2 - Beautiful Day (Official Music Vidao).mp3.download" loop></audio>
 
   <!-- BOTÓN FLOTANTE MÚSICA -->
   <button class="music-toggle" id="musicToggle" aria-label="Reproducir música">
@@ -512,8 +560,14 @@
     <!-- HERO – PORTADA COMPLETA -->
     <section class="hero" id="inicio">
       <div class="hero-full">
-        <!-- Portada con tu imagen, sin texto extra -->
+        <!-- Portada con tu imagen -->
         <img src="https://i.imgur.com/14yaOzQ.png" alt="Portada Mariela y Fabio">
+        <!-- Texto encima -->
+        <div class="hero-overlay">
+          <h1 class="hero-names">Mariela &amp; Fabio</h1>
+          <p class="hero-date">Sábado 17 de enero de 2026</p>
+          <p class="hero-place">Predio “El Castillito”. Resistencia, Chaco.</p>
+        </div>
       </div>
     </section>
 
@@ -571,7 +625,7 @@
       </div>
 
       <div class="gallery-grid">
-        <img src="https://i.imgur.com/vWerE6N.jpeg" alt="Foto 1">
+        <img class="gallery-img-1" src="https://i.imgur.com/vWerE6N.jpeg" alt="Foto 1">
         <img src="https://i.imgur.com/4AHnxv4.jpeg" alt="Foto 2">
         <img src="https://i.imgur.com/UxWpdX0.jpeg" alt="Foto 3">
         <img src="https://i.imgur.com/rHdy0rn.jpeg" alt="Foto 4">
@@ -587,7 +641,7 @@
 
       <div class="cards-grid">
         <article class="detail-card">
-          <div class="detail-icon">📍</div>
+          <div class="detail-icon"><span class="detail-icon-symbol">⌂</span></div>
           <div class="detail-title">Lugar &amp; horario</div>
           <div class="detail-heading">Fecha: 17 de enero de 2026</div>
           <p class="detail-text">
@@ -598,7 +652,7 @@
         </article>
 
         <article class="detail-card">
-          <div class="detail-icon">🤍</div>
+          <div class="detail-icon"><span class="detail-icon-symbol">♡</span></div>
           <div class="detail-title">Asistencia</div>
           <p class="detail-text">
             Te pedimos que por favor confirmes tu asistencia antes del
@@ -608,7 +662,7 @@
         </article>
 
         <article class="detail-card">
-          <div class="detail-icon">👗</div>
+          <div class="detail-icon"><span class="detail-icon-symbol">✧</span></div>
           <div class="detail-title">Dress code &amp; niños</div>
           <p class="detail-text">
             <strong>Código de vestimenta:</strong> Elegante sport.<br><br>
@@ -617,7 +671,7 @@
         </article>
 
         <article class="detail-card">
-          <div class="detail-icon">🎁</div>
+          <div class="detail-icon"><span class="detail-icon-symbol">✿</span></div>
           <div class="detail-title">Regalos</div>
           <p class="detail-text">
             Si desean hacernos un regalo, pueden hacerlo a:<br><br>
@@ -813,4 +867,3 @@
   </script>
 </body>
 </html>
-
